@@ -1,0 +1,471 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Anika — Smart Business Decisions, Simplified</title>
+<meta name="description" content="Data-driven insights, actionable recommendations and real-time monitoring, built for SMEs to thrive.">
+<script>
+  // Motion is progressive enhancement: hide the page only until the motion layer is ready (3s safety net).
+  document.documentElement.classList.add('js');
+  setTimeout(function () { document.documentElement.classList.add('ready'); }, 3000);
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<!-- Icon sprite -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+  <symbol id="i-doc" viewBox="0 0 24 30" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H5a2 2 0 0 0-2 2v22a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V9z"/><path d="M14 2v7h7M7 14h10M7 18h10M7 22h6"/></symbol>
+  <symbol id="i-people" viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="7" r="3.4"/><circle cx="4.8" cy="9.4" r="2.5"/><circle cx="19.2" cy="9.4" r="2.5"/><path d="M6 20v-2.2a6 6 0 0 1 12 0V20z"/><path d="M.6 18.5v-1.6a3.9 3.9 0 0 1 3.8-3.9 5.700 5.700 0 0 0-1.900 4.100v1.400zM23.400 18.500v-1.600a3.900 3.900 0 0 0-3.800-3.900 5.700 5.700 0 0 1 1.900 4.100v1.400z"/></symbol>
+  <symbol id="i-mega" viewBox="0 0 24 24" fill="currentColor"><path d="m3 15 9-8 4 4-8 9z"/><path d="m14 4 1.800-1.800 1.400 1.400L15.400 5.400zM18 7l2.400-.8.600 1.800-2.400.8zM19.500 11.500l2.500.2-.2 1.900-2.500-.2z"/></symbol>
+  <symbol id="i-bolt" viewBox="0 0 24 24" fill="currentColor"><path d="M13 2 4 14h6l-1 8 9-12h-6z"/></symbol>
+  <symbol id="i-chart" viewBox="0 0 24 24" fill="currentColor"><rect x="3" y="14" width="3.600" height="7" rx=".8"/><rect x="8.500" y="11" width="3.600" height="10" rx=".8"/><rect x="14" y="8" width="3.600" height="13" rx=".8"/><rect x="19.500" y="5" width="3" height="16" rx=".8"/><path d="m3 9 5-4 4 2 8-5" fill="none" stroke="currentColor" stroke-width="1.800" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+  <symbol id="i-arrow-ur" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.200" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M8 7h9v9"/></symbol>
+  <symbol id="i-arrow-r" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.200" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></symbol>
+  <symbol id="i-chev-d" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.400" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></symbol>
+  <symbol id="i-chev-r" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.600" stroke-linecap="round" stroke-linejoin="round"><path d="m9 5 7 7-7 7"/></symbol>
+  <symbol id="i-hub" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.600" stroke-linecap="round"><circle cx="12" cy="12" r="4.200" fill="currentColor" stroke="none"/><path d="M12 7.800V4M12 16.200V20M7.800 12H4M16.200 12H20M8.900 8.900 6.200 6.200M15.100 15.100l2.700 2.700M15.100 8.900l2.700-2.700M8.900 15.100l-2.700 2.700"/><g fill="currentColor" stroke="none"><circle cx="12" cy="3.200" r="1.500"/><circle cx="12" cy="20.800" r="1.500"/><circle cx="3.200" cy="12" r="1.500"/><circle cx="20.800" cy="12" r="1.500"/></g></symbol>
+  <symbol id="i-plus" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.800" stroke-linecap="round"><path d="M12 4v16M4 12h16"/></symbol>
+  <symbol id="i-send" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.700" stroke-linejoin="round" stroke-linecap="round"><path d="M21 3 3 11l7 3 3 7z"/><path d="M21 3 10 14"/></symbol>
+  <symbol id="i-globe" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.600"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2c3 3 4.500 6.500 4.500 10S15 19 12 22c-3-3-4.500-6.500-4.500-10S9 5 12 2z"/></symbol>
+</svg>
+
+<header class="nav" id="nav">
+  <a class="logo" href="#" aria-label="Anika home">
+    <svg viewBox="0 0 64 64" width="38" height="38" aria-hidden="true">
+      <defs>
+        <linearGradient id="lg" x1="0" y1="0" x2="1" y2="1">
+          <stop offset="0" stop-color="#2F6BFF"/><stop offset="1" stop-color="#6B3FEA"/>
+        </linearGradient>
+      </defs>
+      <path d="M52 20A24 24 0 1 0 52 44" fill="none" stroke="url(#lg)" stroke-width="13" stroke-linecap="butt"/>
+    </svg>
+    <span>nika</span>
+  </a>
+
+  <nav class="links" aria-label="Primary">
+    <a href="#about" data-spy="about">About</a>
+    <a href="#features" data-spy="features">Features</a>
+    <a href="#pricing" data-spy="pricing">Pricing</a>
+    <a href="#faqs" data-spy="faqs">FAQs</a>
+    <span class="link-ind" aria-hidden="true"></span>
+  </nav>
+
+  <div class="actions">
+    <div class="region">
+      <button class="btn btn-region" type="button" aria-haspopup="menu" aria-expanded="false" aria-controls="region-menu">
+        <svg width="22" height="22" aria-hidden="true"><use href="#i-globe"/></svg>
+        <span class="region-label">Canada</span>
+        <svg class="caret" width="16" height="16" aria-hidden="true"><use href="#i-chev-d"/></svg>
+      </button>
+      <ul class="region-menu" id="region-menu" role="menu" hidden>
+        <li role="none"><button type="button" role="menuitemradio" aria-checked="true">Canada</button></li>
+        <li role="none"><button type="button" role="menuitemradio" aria-checked="false">United States</button></li>
+        <li role="none"><button type="button" role="menuitemradio" aria-checked="false">United Kingdom</button></li>
+        <li role="none"><button type="button" role="menuitemradio" aria-checked="false">Nigeria</button></li>
+      </ul>
+    </div>
+    <a class="btn btn-outline" href="#login">Log in</a>
+    <a class="btn btn-primary" href="#start">Get Started</a>
+  </div>
+</header>
+
+<main>
+  <!-- ========== HERO ========== -->
+  <section class="hero" aria-labelledby="hero-title">
+    <h1 id="hero-title" class="m-head">
+      Smart Business Decisions, <span class="accent">Simplified.</span>
+    </h1>
+    <p class="lede">
+      Empower your business with data-driven insights, actionable recommendations, and
+      real-time monitoring, Anika is built for SMEs to thrive.
+    </p>
+    <div class="cta">
+      <a class="btn btn-primary btn-lg" href="#start">Get Started</a>
+      <a class="btn btn-outline-dark btn-lg" href="#demo">
+        Demo
+        <svg width="22" height="22" aria-hidden="true"><use href="#i-arrow-r"/></svg>
+      </a>
+    </div>
+
+    <figure class="showcase" id="showcase">
+      <div class="rise"><div class="float">
+        <div class="dash" id="dash" role="img" aria-label="Anika dashboard: marketing budget $3,150, company team, monthly income versus expenses report, total profits $92,900 up 13%, total expenses $25,050 up 20%, a Generate Financial Analysis assistant, and expenses by category.">
+          <div class="dash-in" aria-hidden="true">
+
+            <div class="ui-card c-budget" style="--d:6">
+              <div class="b-top">
+                <span class="b-amt" data-count="3150" data-prefix="$">$3,150</span>
+                <svg class="b-doc"><use href="#i-doc"/></svg>
+              </div>
+              <span class="b-date">12 Dec 2025</span>
+              <svg class="spark" viewBox="0 0 390 140">
+                <g stroke="#cfcfd2" stroke-width="3.500" stroke-linecap="round"><path d="M0 12H386M0 56H386M0 100H386"/></g>
+                <path class="curve" pathLength="1" d="M16 126C22 62 70 44 150 50S300 74 372 12" fill="none" stroke="#6B3FEA" stroke-width="4" stroke-linecap="round"/>
+                <circle class="dot-s" cx="16" cy="126" r="6" fill="#6B3FEA"/><circle class="dot-e" cx="372" cy="12" r="6" fill="#6B3FEA"/>
+              </svg>
+              <div class="b-label"><svg><use href="#i-mega"/></svg><span>Marketing Budget</span></div>
+            </div>
+
+            <div class="ui-card c-team" style="--d:10">
+              <div class="t-head"><b>Company Team</b><svg><use href="#i-people"/></svg></div>
+              <div class="t-rule"></div>
+              <ul class="t-list">
+                <li class="t-row"><i class="av av1"></i><div><span>Agus Sapto</span><small>Marketing</small></div></li>
+                <li class="t-row"><i class="av av2"></i><div><span>James Moore</span><small>Designer</small></div></li>
+                <li class="t-row"><i class="av av3"></i><div><span>James Smith</span><small>Product Manager</small></div></li>
+              </ul>
+            </div>
+
+            <div class="ui-card chart-card c-chart" style="--d:7">
+              <div class="ch-head"><b>Monthly Report</b><span>August <svg><use href="#i-chev-d"/></svg></span></div>
+              <span class="ch-amt" data-count="22200" data-prefix="$">$22,200</span>
+              <span class="ch-date">August 2025</span>
+              <div class="bars">
+                <span class="bar" style="--p:100;--k:95"><i class="pu"></i><i class="bk"></i></span>
+                <span class="bar" style="--p:55;--k:146"><i class="pu"></i><i class="bk"></i></span>
+                <span class="bar" style="--p:106;--k:71"><i class="pu"></i><i class="bk"></i></span>
+                <span class="bar" style="--p:118;--k:108"><i class="pu"></i><i class="bk"></i></span>
+                <span class="bar" style="--p:214;--k:45"><i class="pu"></i><i class="bk"></i></span>
+                <span class="bar" style="--p:65;--k:81"><i class="pu"></i><i class="bk"></i></span>
+                <span class="bar" style="--p:65;--k:136"><i class="pu"></i><i class="bk"></i></span>
+                <span class="bar" style="--p:65;--k:75"><i class="pu"></i><i class="bk"></i></span>
+                <span class="bar" style="--p:114;--k:95"><i class="pu"></i><i class="bk"></i></span>
+              </div>
+              <div class="base"></div>
+              <div class="legend-c"><i class="sw sw-p"></i><span>Income</span><i class="sw sw-k"></i><span>Expenses</span></div>
+            </div>
+
+            <div class="d-side">
+              <div class="ui-card stat stat-dark" style="--d:9">
+                <div class="stat-t"><span>Total Profits</span><b data-count="92900" data-prefix="$">$92,900</b><small>In Last 7 Months</small></div>
+                <div class="pill pill-light"><i class="pill-ic pill-ic-p"><svg><use href="#i-arrow-ur"/></svg></i><span class="pulse-t">+13%</span></div>
+              </div>
+              <div class="ui-card stat stat-light" style="--d:5">
+                <div class="stat-t"><span>Total Expenses</span><b data-count="25050" data-prefix="$">$25,050</b><small>In Last 7 Months</small></div>
+                <div class="pill pill-dark"><i class="pill-ic pill-ic-w"><svg><use href="#i-arrow-r"/></svg></i><span class="pulse-t">+20%</span></div>
+              </div>
+            </div>
+
+            <div class="ui-card c-analysis" style="--d:8">
+              <span class="a-ic"><svg><use href="#i-chart"/></svg></span>
+              <h3>Generate Financial Analysis</h3>
+              <p>Analyze your financial report more easily with our virtual assistant</p>
+              <span class="a-btn"><svg><use href="#i-bolt"/></svg>Generate Analysis</span>
+            </div>
+
+            <div class="ui-card c-donut" style="--d:6">
+              <span class="dn-sel">This Month <svg><use href="#i-chev-d"/></svg></span>
+              <span class="dn-lab">Expenses by Category</span>
+              <b class="dn-val" data-count="25050" data-prefix="$">$25,050</b>
+              <span class="dn-more"><i></i><i></i><i></i></span>
+              <div class="donut-wrap">
+                <svg viewBox="0 0 400 400">
+                  <defs><mask id="dm"><circle class="dmask" cx="200" cy="200" r="150" fill="none" stroke="#fff" stroke-width="320" pathLength="100" stroke-dasharray="100" stroke-dashoffset="0"/></mask></defs>
+                  <g mask="url(#dm)" transform="rotate(-90 200 200)" fill="none">
+                    <circle cx="200" cy="200" r="152.5" stroke="#6B3FEA" stroke-width="95" pathLength="100" stroke-dasharray="25 100" stroke-dashoffset="0"/>
+                    <circle cx="200" cy="200" r="140" stroke="#0038A8" stroke-width="70" pathLength="100" stroke-dasharray="31.94 100" stroke-dashoffset="-25"/>
+                    <circle cx="200" cy="200" r="140" stroke="#2FCBFF" stroke-width="70" pathLength="100" stroke-dasharray="11.11 100" stroke-dashoffset="-56.94"/>
+                    <circle cx="200" cy="200" r="140" stroke="#1E6BFF" stroke-width="70" pathLength="100" stroke-dasharray="31.95 100" stroke-dashoffset="-68.05"/>
+                  </g>
+                  <text x="312" y="108" fill="#fff" font-size="23" text-anchor="middle" font-family="Schibsted Grotesk, sans-serif">30%</text>
+                </svg>
+                <div class="dn-center"><b data-count="80" data-suffix="%">80%</b><small>Total Expand</small></div>
+              </div>
+              <ul class="legend">
+                <li><i style="background:#6B3FEA"></i><span>Marketing</span><em>30%</em></li>
+                <li><i style="background:#0038A8"></i><span>Utility</span><em>40%</em></li>
+                <li><i style="background:#1E6BFF"></i><span>Logistics</span><em>20%</em></li>
+                <li><i style="background:#2FCBFF"></i><span>Other Bills</span><em>33%</em></li>
+              </ul>
+            </div>
+
+          </div>
+        </div>
+      </div></div>
+    </figure>
+  </section>
+
+  <!-- ========== WHY ========== -->
+  <section class="why" id="about" aria-labelledby="why-title">
+    <div class="tint" aria-hidden="true"></div>
+    <header class="sec-head">
+      <h2 id="why-title" class="m-head">Why Use <span class="accent">Anika?</span></h2>
+      <p class="sub">High-Quality Business Advisory at an Affordable Price</p>
+    </header>
+
+    <div class="why-grid">
+      <div class="why-copy">
+        <p>Small businesses face big challenges, but not every SME can afford top-tier consulting services.<br>That’s where Anika steps in.</p>
+        <p>With AI-powered tools and industry expertise, we help you:</p>
+      </div>
+
+      <div class="why-card">
+        <ul>
+          <li>
+            <svg viewBox="0 0 24 24" width="30" height="30" fill="none" stroke="currentColor" stroke-width="1.700" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.500A9 9 0 1 1 15.500 4.200"/><path d="m8 12 3 3 8-8"/></svg>
+            <span>Optimize cash flow and expenses.</span>
+          </li>
+          <li>
+            <svg viewBox="0 0 24 24" width="30" height="30" fill="none" stroke="currentColor" stroke-width="1.700" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.500A9 9 0 1 1 15.500 4.200"/><path d="m8 12 3 3 8-8"/></svg>
+            <span>Streamline operations and boost productivity.</span>
+          </li>
+          <li>
+            <svg viewBox="0 0 24 24" width="30" height="30" fill="none" stroke="currentColor" stroke-width="1.700" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.500A9 9 0 1 1 15.500 4.200"/><path d="m8 12 3 3 8-8"/></svg>
+            <span>Stay ahead of market trends with competitive insights.</span>
+          </li>
+        </ul>
+        <p class="why-note">Anika is your on-demand business advisor, tailored for growth.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== FEATURES ========== -->
+  <section class="features" id="features" aria-labelledby="features-title">
+    <div class="tint" aria-hidden="true"></div>
+    <header class="sec-head">
+      <h2 id="features-title" class="m-head">Anika Core Features</h2>
+      <p class="sub">Everything You Need to Succeed</p>
+    </header>
+
+    <div class="feat-grid">
+      <article class="feat" id="feat-int">
+        <h3>Data Integration Hub</h3>
+        <p>Seamlessly connect to your favorite tools like QuickBooks, Salesforce, and more for a single source of truth.</p>
+        <div class="mini mini-int" style="--w:46%">
+          <div class="int-card">
+            <svg class="int-link" viewBox="0 0 440 274" aria-hidden="true"><path pathLength="1" d="M46 88V118" stroke="#6B3FEA" stroke-width="2.500" stroke-dasharray="1" fill="none" stroke-linecap="round"/></svg>
+            <div class="int-row"><span class="int-ic"><svg><use href="#i-hub"/></svg></span><div><b>QuickBooks</b><small>Business Tool</small></div><svg class="chev"><use href="#i-chev-r"/></svg></div>
+            <div class="int-row"><span class="int-ic"><svg><use href="#i-hub"/></svg></span><div><b>Salesforce</b><small>Business Tool</small></div><svg class="chev"><use href="#i-chev-r"/></svg></div>
+            <div class="int-row int-ghost"><span class="int-ic"><svg><use href="#i-hub"/></svg></span><div><b>Xero</b><small>Business Tool</small></div><svg class="chev"><use href="#i-chev-r"/></svg></div>
+          </div>
+          <button class="int-btn" type="button">Connect More Tools</button>
+        </div>
+      </article>
+
+      <article class="feat" id="feat-fin">
+        <h3>Financial Health Monitoring</h3>
+        <p>Track cash flow, analyze expenses, and receive actionable recommendations for profitability.</p>
+        <div class="mini mini-chart" style="--w:40%">
+          <div class="ui-card chart-card">
+            <div class="ch-head"><b>Monthly Report</b><span>August <svg><use href="#i-chev-d"/></svg></span></div>
+            <span class="ch-amt" data-count="22200" data-prefix="$">$22,200</span>
+            <span class="ch-date">August 2025</span>
+            <div class="bars">
+              <span class="bar" style="--p:100;--k:95"><i class="pu"></i><i class="bk"></i></span>
+              <span class="bar" style="--p:55;--k:146"><i class="pu"></i><i class="bk"></i></span>
+              <span class="bar" style="--p:106;--k:71"><i class="pu"></i><i class="bk"></i></span>
+              <span class="bar" style="--p:118;--k:108"><i class="pu"></i><i class="bk"></i></span>
+              <span class="bar" style="--p:214;--k:45"><i class="pu"></i><i class="bk"></i></span>
+              <span class="bar" style="--p:65;--k:81"><i class="pu"></i><i class="bk"></i></span>
+              <span class="bar" style="--p:65;--k:136"><i class="pu"></i><i class="bk"></i></span>
+              <span class="bar" style="--p:65;--k:75"><i class="pu"></i><i class="bk"></i></span>
+              <span class="bar" style="--p:114;--k:95"><i class="pu"></i><i class="bk"></i></span>
+            </div>
+            <div class="base"></div>
+            <div class="legend-c"><i class="sw sw-p"></i><span>Income</span><i class="sw sw-k"></i><span>Expenses</span></div>
+          </div>
+        </div>
+      </article>
+
+      <article class="feat" id="feat-ops">
+        <h3>Operational Excellence</h3>
+        <p>Identify bottlenecks, optimize workflows, and maximize employee performance.</p>
+        <div class="mini mini-team" style="--w:28%">
+          <div class="ui-card c-team">
+            <div class="t-head"><b>Company Team</b><svg><use href="#i-people"/></svg></div>
+            <div class="t-rule"></div>
+            <ul class="t-list">
+              <li class="t-row"><i class="av av1"></i><div><span>Agus Sapto</span><small>Marketing</small></div></li>
+              <li class="t-row"><i class="av av2"></i><div><span>James Moore</span><small>Designer</small></div></li>
+              <li class="t-row"><i class="av av3"></i><div><span>James Smith</span><small>Product Manager</small></div></li>
+            </ul>
+          </div>
+          <button class="plus" type="button" aria-label="Add team member"><span class="plus-ring"></span><svg><use href="#i-plus"/></svg></button>
+        </div>
+      </article>
+
+      <article class="feat" id="feat-mkt">
+        <h3>Market Intelligence</h3>
+        <p>Discover trends, analyze competitors, and uncover growth opportunities—all in one place.</p>
+        <div class="mini mini-chat" style="--w:58%">
+          <div class="chat">
+            <div class="msg msg-user">
+              <div class="msg-h"><i class="dot dot-k"></i><b>You</b><span class="mdots">•••</span></div>
+              <p>I want to start a marketing campaign, but I don’t know what is best for my company. Can you give me some advice?</p>
+            </div>
+            <div class="msg msg-ai">
+              <div class="msg-h"><i class="dot dot-p"></i><b>AI Assistant</b><span class="mdots">•••</span></div>
+              <p class="ai-text">Sure, I can help you. Before giving advice, I’ll like to know about your marketing budget and your target audience. After that, I’ll recommend some marketing trend that suit you.</p>
+              <div class="typing" aria-hidden="true"><i></i><i></i><i></i></div>
+            </div>
+            <form class="chat-in" onsubmit="return false">
+              <input type="text" placeholder="Send a message…" aria-label="Send a message" autocomplete="off">
+              <button type="submit" aria-label="Send message"><svg><use href="#i-send"/></svg></button>
+            </form>
+          </div>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <!-- ========== HOW ========== -->
+  <section class="how" id="how" aria-labelledby="how-title">
+    <header class="sec-head">
+      <h2 id="how-title" class="m-head">How It Works</h2>
+      <p class="sub">3 Simple Steps to Smarter Decisions</p>
+    </header>
+
+    <div class="steps-wrap">
+      <div class="steps-line" aria-hidden="true"><i class="line-track"></i><i class="line-fill"></i></div>
+      <ol class="steps">
+        <li class="step step-1">
+          <div class="step-art" aria-hidden="true">
+            <span class="orb"></span>
+            <svg class="loop" viewBox="0 0 100 100"><rect class="chip-a" x="14" y="24" width="17" height="12" rx="3.500" fill="#fff" opacity=".92"/><rect class="chip-b" x="14" y="44" width="17" height="12" rx="3.500" fill="#fff" opacity=".92"/><path class="lk" pathLength="1" d="M22.500 36v8" stroke="#fff" stroke-width="2.200" stroke-linecap="round"/></svg>
+            <span class="shot"></span>
+            <span class="badge">1</span>
+          </div>
+          <h3>Connect Your Tools</h3>
+          <p>Integrate your accounting, CRM, and other systems with ease.</p>
+        </li>
+        <li class="step step-2">
+          <div class="step-art" aria-hidden="true">
+            <span class="orb"></span>
+            <svg class="loop" viewBox="0 0 100 100"><g fill="#fff" opacity=".92"><rect class="mb" x="16" y="36" width="4.500" height="10" rx="1.500"/><rect class="mb" x="22.500" y="30" width="4.500" height="16" rx="1.500"/><rect class="mb" x="29" y="34" width="4.500" height="12" rx="1.500"/><rect class="mb" x="35.500" y="26" width="4.500" height="20" rx="1.500"/></g></svg>
+            <span class="shot"></span>
+            <span class="badge">2</span>
+          </div>
+          <h3>Get Real-Time Insights</h3>
+          <p>Our AI analyzes your data and highlights critical areas for improvement.</p>
+        </li>
+        <li class="step step-3">
+          <div class="step-art" aria-hidden="true">
+            <span class="orb"></span>
+            <svg class="loop" viewBox="0 0 100 100"><circle cx="50" cy="50" r="43" fill="none" stroke="#fff" stroke-opacity=".28" stroke-width="2.500"/><circle class="ring" cx="50" cy="50" r="43" fill="none" stroke="#fff" stroke-width="2.800" stroke-linecap="round" pathLength="1" transform="rotate(-90 50 50)"/></svg>
+            <span class="shot"></span>
+            <span class="badge">3</span>
+          </div>
+          <h3>Take Action</h3>
+          <p>Receive clear, step-by-step recommendations to implement change and see measurable results.</p>
+        </li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- ========== PRICING ========== -->
+  <section class="pricing" id="pricing" aria-labelledby="pricing-title">
+    <div class="tint" aria-hidden="true"></div>
+    <header class="sec-head">
+      <h2 id="pricing-title" class="m-head">Affordable Plans For Every <span class="accent">Business</span></h2>
+      <p class="sub">Transparent Pricing That Fits Your Budget</p>
+    </header>
+
+    <div class="billing" role="group" aria-label="Billing period" data-period="monthly">
+      <span class="billing-pill" aria-hidden="true"></span>
+      <button type="button" class="is-active" data-period="monthly" aria-pressed="true">Monthly</button>
+      <button type="button" data-period="annual" aria-pressed="false">Annually</button>
+      <span class="save-badge" aria-hidden="true">Save 17%</span>
+    </div>
+
+    <div class="plans">
+      <article class="plan">
+        <h3>Essential</h3>
+        <p class="plan-desc">Get started with basic financial insights and recommendations.</p>
+        <p class="price"><span class="amount" data-monthly="199" data-annual="1990">$199</span><span class="per">/month</span></p>
+        <hr>
+        <ul>
+          <li>1 business</li>
+          <li>+6 User</li>
+          <li>Free Consultation Report</li>
+          <li>Collaboration Tools</li>
+        </ul>
+      </article>
+
+      <article class="plan">
+        <h3>Professional</h3>
+        <p class="plan-desc">Unlock advanced analytics and operational tools for growing businesses.</p>
+        <p class="price"><span class="amount" data-monthly="499" data-annual="4990">$499</span><span class="per">/month</span></p>
+        <hr>
+        <ul>
+          <li>1 business</li>
+          <li>+6 User</li>
+          <li>Free Consultation Report</li>
+          <li>Collaboration Tools</li>
+        </ul>
+      </article>
+
+      <article class="plan plan-featured">
+        <span class="plan-glow" aria-hidden="true"></span>
+        <h3>Enterprise</h3>
+        <p class="plan-desc">Enjoy full access, custom integrations, and dedicated support.</p>
+        <p class="price"><span class="amount" data-monthly="999" data-annual="9990">$999</span><span class="per">/month</span></p>
+        <hr>
+        <ul>
+          <li>1 business</li>
+          <li>+10 User</li>
+          <li>Free Consultation Report</li>
+          <li>Collaboration Tools</li>
+          <li>Integrated Media License</li>
+          <li>Can Access All Tools</li>
+        </ul>
+      </article>
+    </div>
+  </section>
+
+  <!-- ========== CTA ========== -->
+  <section class="cta-band" aria-labelledby="cta-title">
+    <div class="cta-panel" id="cta-panel">
+      <span class="cta-bg" aria-hidden="true"></span>
+      <div class="cta-copy">
+        <h2 id="cta-title" class="m-head">Ready to Grow <span class="accent">Smarter?</span></h2>
+        <p class="cta-p">Let Anika help you turn data into decisions and challenges into opportunities.<br>Get Started for Free</p>
+        <a class="btn btn-primary btn-lg cta-btn" href="#demo">
+          Demo
+          <svg width="22" height="22" aria-hidden="true"><use href="#i-arrow-r"/></svg>
+        </a>
+      </div>
+      <div class="cta-device-wrap" aria-hidden="true">
+        <img class="cta-device" src="assets/cta-device.png" alt="" width="3076" height="2552" loading="lazy">
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="footer">
+  <div class="footer-grid">
+    <div class="foot-brand">
+      <h4><span class="accent-s">Anika</span> – Smart Decisions Made Simple.</h4>
+      <p>Anika empowers SMEs with AI-driven insights to solve challenges, drive growth, and make smarter decisions.</p>
+    </div>
+    <nav class="foot-col" aria-label="Company">
+      <h4>Company</h4>
+      <a href="#about">About</a>
+      <a href="#pricing">Pricing</a>
+      <a href="#faqs">FAQs</a>
+    </nav>
+    <nav class="foot-col" aria-label="Legal">
+      <h4>Legal</h4>
+      <a href="#terms">Terms &amp; Privacy</a>
+    </nav>
+    <nav class="foot-col foot-social" aria-label="Contact">
+      <h4>Contact</h4>
+      <a href="mailto:hello@anika.com">hello@anika.com</a>
+      <a href="#instagram">Instagram</a>
+      <a href="#twitter">Twitter</a>
+      <a href="#facebook">Facebook</a>
+    </nav>
+  </div>
+  <p class="copyright">Copyright 2025 - FinRik Technology Limited. All rights reserved.</p>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" defer></script>
+<script src="https://cdn.jsdelivr.net/npm/lenis@1.1.18/dist/lenis.min.js" defer></script>
+<script src="motion.js" defer></script>
+</body>
+</html>
